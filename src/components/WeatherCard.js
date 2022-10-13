@@ -9,7 +9,7 @@ return(
     <p> humidity: {humidity}%</p>
     <p>Current Temperture: {temp}º </p>
     <p>Highest Today: {maxtemp}º </p>
-    <p> Lowest Today: {lowtemp}</p>
+    <p> Lowest Today: {lowtemp}º</p>
     <p> How many clouds today: {clouds}</p>
     <p> Wind Speed: {wind}</p>
 
