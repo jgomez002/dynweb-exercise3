@@ -1,0 +1,11 @@
+.wrapper{
+    background-color: white;
+    text-align: center;
+     border: 5px solid black;
+}
+
+.WeatherCard-looksLike svg{
+    min-height: 90px;
+    width: auto;
+}
+
