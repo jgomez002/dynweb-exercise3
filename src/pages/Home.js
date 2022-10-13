@@ -3,8 +3,7 @@ import axios from 'axios';
 import { useSearchParams } from "react-router-dom";
 import { WEATHER_APP_API_KEY } from '../API_KEYS';
 import WeatherCard from '../components/WeatherCard.js';
-
-
+import Header from '../components/Header.js';
 function Home(){
 //Value Stored in state for weather data
 const [weatherData,setWeatherData] = useState({});
@@ -54,6 +53,7 @@ const {humidity, temp, maxtemp, lowtemp, clouds,wind, looksLike} = useMemo(() =>
 console.log("state value",weatherData);
     return (  
     <div>
+     <Header />
         <h1> Weather App</h1>
         <WeatherCard 
         city = {city} 
