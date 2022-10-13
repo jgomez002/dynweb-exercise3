@@ -14,7 +14,10 @@ const OpenWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=Orland
 // cities to all seoul, 
 
 useEffect(() => {
+    //Query OpenWeatherAPI for weather data 
+    //make request to OpenWeather beased on city
     axios
+    //axios is a package, contains abstractions 
     .get(OpenWeatherURL)
     .then(function(response) {
      setWeatherData(response.data);
@@ -25,21 +28,21 @@ useEffect(() => {
     });
 }, []); 
 
-const {humidity, temp, maxtemp, lowtemp, clouds,wind, looksLike} = useMemo(() => {
+const {city, humidity, temp, maxtemp, lowtemp, clouds,wind, looksLike} = useMemo(() => {
     const weatherMain = weatherData.main || {};
     const weatherClouds = weatherData.clouds || {};
     const weatherWind = weatherData.wind || {};
-    const weatherWeather = weatherData.weather || {};
 
 
     return {
+        city: weatherData.name,
         humidity: weatherMain.humidity,
         temp: weatherMain.temp,
         maxtemp: weatherMain.temp_max,
         lowtemp: weatherMain.temp_min,
         clouds: weatherClouds.all,
         wind: weatherWind.speed,
-        looksLike: weatherWeather.main,
+        looksLike: weatherData.weather && weatherData.weather[0].main,
 
     };
 }, [weatherData]);
@@ -49,7 +52,8 @@ console.log("state value",weatherData);
     return (  
     <div>
         <h1> Weather App</h1>
-        <WeatherCard city = {"Orlando"} 
+        <WeatherCard 
+        city = {city} 
         humidity ={humidity} 
         temp={temp} 
         maxtemp={maxtemp} 
