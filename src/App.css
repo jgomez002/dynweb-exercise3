@@ -1,7 +1,6 @@
-.wrapper{
-    background-color: white;
-    text-align: center;
-     border: 5px solid black;
+.page-wrapper{
+ min-height: 100vh;
+ text-align: center;
 }
 
 .WeatherCard-looksLike svg{
@@ -9,3 +8,29 @@
     width: auto;
 }
 
+.WeatherCard-wrapper{
+    background-color: white;
+    border: 5px solid black;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 25px;
+
+}
+
+a{
+    font-size: 20px;
+   padding: 15px;
+   text-decoration: none;
+}
+
+a:before{
+    color: slategrey;
+}
+
+a:visited{
+    color: slategrey;
+}
+
+h1{
+    color: slategrey;
+}

@@ -52,7 +52,8 @@ const {humidity, temp, maxtemp, lowtemp, clouds,wind, looksLike} = useMemo(() =>
 //display weather data into app
 console.log("state value",weatherData);
     return (  
-    <div>
+    <div style = {{ backgroundColor: `rgba(0,0,0,${clouds/100})` }}>
+    <div className = "page-wrapper">
      <Header />
         <h1> Weather App</h1>
         <WeatherCard 
@@ -66,7 +67,12 @@ console.log("state value",weatherData);
         looksLike={looksLike}
         />
     </div>
+    </div>
     );
 }
 
 export default Home;
+
+// backgroundColor: `rgba(0,0,0,${clouds/100})`
+
+// backgroundImage: `url("https://i.gifer.com/XFbw.gif")`,
