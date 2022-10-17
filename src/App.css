@@ -1,6 +1,8 @@
 .page-wrapper{
  min-height: 100vh;
  text-align: center;
+ /* background-image: url("https://i.gifer.com/XFbw.gif"); */
+
 }
 
 .WeatherCard-looksLike svg{
@@ -24,13 +26,13 @@ a{
 }
 
 a:before{
-    color: slategrey;
+    color: black;
 }
 
 a:visited{
-    color: slategrey;
+    color: black;
 }
 
 h1{
-    color: slategrey;
+    color: black;
 }

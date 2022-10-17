@@ -52,7 +52,7 @@ const {humidity, temp, maxtemp, lowtemp, clouds,wind, looksLike} = useMemo(() =>
 //display weather data into app
 console.log("state value",weatherData);
     return (  
-    <div style = {{ backgroundColor: `rgba(0,0,0,${clouds/100})` }}>
+    <div style = {{backgroundColor: `rgba(102, 153, 204,${1.15-clouds/100})`}}>
     <div className = "page-wrapper">
      <Header />
         <h1> Weather App</h1>
