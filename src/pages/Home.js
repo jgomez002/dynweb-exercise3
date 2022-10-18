@@ -11,7 +11,6 @@ const [city, setCity] = useState('Orlando');
 const [searchParams] = useSearchParams();
     //query OpenWeatherAPI for weather data   
     //  make request t o OpenWeather, based on city
-console.log('searchParams',searchParams.get('city'));
 
 // cities to all seoul, Chicago, Tokyo, Bogota  
 
@@ -35,6 +34,7 @@ const {humidity, temp, maxtemp, lowtemp, clouds,wind, looksLike} = useMemo(() =>
     const weatherMain = weatherData.main || {};
     const weatherClouds = weatherData.clouds || {};
     const weatherWind = weatherData.wind || {};
+    
 
 
     return {
@@ -49,10 +49,15 @@ const {humidity, temp, maxtemp, lowtemp, clouds,wind, looksLike} = useMemo(() =>
     };
 }, [weatherData]);
 
+
 //display weather data into app
-console.log("state value",weatherData);
     return (  
     <div style = {{backgroundColor: `rgba(102, 153, 204,${1.15-clouds/100})`}}>
+    {/* Less cloudy, bluer the sky; the cloudier it is, less opacate blue */}
+
+    <img style={{opacity: `${clouds/100}` }}></img>
+    {/* higher percentage of cloudiness -> more visible the cloud gif is */}
+
     <div className = "page-wrapper">
      <Header />
         <h1> Weather App</h1>
@@ -72,7 +77,3 @@ console.log("state value",weatherData);
 }
 
 export default Home;
-
-// backgroundColor: `rgba(0,0,0,${clouds/100})`
-
-// backgroundImage: `url("https://i.gifer.com/XFbw.gif")`,
